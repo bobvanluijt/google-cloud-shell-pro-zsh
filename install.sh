@@ -5,7 +5,8 @@
 main() {
 
   # Install zsh
-  apt-get update && apt-get install zsh -y
+  sudo apt-get -qq update 
+  sudo apt-get -qq install zsh -y
 
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
@@ -108,25 +109,20 @@ main() {
   cd ~/.oh-my-zsh/plugins
   git clone https://github.com/littleq0903/gcloud-zsh-completion.git
   fpath=(~/.oh-my-zsh/plugins/gcloud-zsh-completion/src $fpath)
-  "autoload -U compinit compdef" >> ~/.zshrc
-  "compinit" >> ~/.zshrc
-  compinit
+  echo "autoload -U compinit compdef" >> ~/.zshrc
+  echo "compinit" >> ~/.zshrc
+  echo "cd ~" >> ~/.zshrc
 
   ##
-  # Fancy load script
+  # Fancy Acii
   ##
   echo "clear" >> ~/.zshrc
-  echo " ,----.                        ,--.            ,-----.,--.                  ,--." >> ~/.zshrc
-  echo "'  .-./    ,---.  ,---.  ,---. |  | ,---.     '  .--./|  | ,---. ,--.,--. ,-|  |" >> ~/.zshrc
-  echo "|  | .---.| .-. || .-. || .-. ||  || .-. :    |  |    |  || .-. ||  ||  |' .-. |" >> ~/.zshrc 
-  echo "'  '--'  |' '-' '' '-' '' '-' '|  |\   --.    '  '--'\|  |' '-' ''  ''  '\ `-' |" >> ~/.zshrc
-  echo " `------'  `---'  `---' .`-  / `--' `----'     `-----'`--' `---'  `----'  `---'" >> ~/.zshrc
-  echo "                        `---'" >> ~/.zshrc 
-  echo " ,---.  ,--.            ,--.,--.    ,------." >> ~/.zshrc 
-  echo "'   .-' |  ,---.  ,---. |  ||  |    |  .--. ',--.--. ,---." >> ~/.zshrc
-  echo "`.  `-. |  .-.  || .-. :|  ||  |    |  '--' ||  .--'| .-. |" >> ~/.zshrc
-  echo ".-'    ||  | |  |\   --.|  ||  |    |  | --' |  |   ' '-' '" >> ~/.zshrc
-  echo "`-----' `--' `--' `----'`--'`--'    `--'     `--'    `---'" >> ~/.zshrc
+  echo "echo '   _____ _                 _    _____ _          _ _   _____           '" >> ~/.zshrc
+  echo "echo '  / ____| |               | |  / ____| |        | | | |  __ \          '" >> ~/.zshrc
+  echo "echo ' | |    | | ___  _   _  __| | | (___ | |__   ___| | | | |__) | __ ___  '" >> ~/.zshrc
+  echo "echo ' | |    | |/ _ \| | | |/ _  |  \___ \|  _ \ / _ \ | | |  ___/  __/ _ \ '" >> ~/.zshrc
+  echo "echo ' | |____| | (_) | |_| | (_| |  ____) | | | |  __/ | | | |   | | | (_) |'" >> ~/.zshrc
+  echo "echo '  \_____|_|\___/ \__,_|\__,_| |_____/|_| |_|\___|_|_| |_|   |_|  \___/ '" >> ~/.zshrc
 
   $(grep /zsh$ /etc/shells | tail -1)
 
