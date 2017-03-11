@@ -19,6 +19,6 @@ _Note: after 30 min the cloud shell resets to its original state, the script wil
 - `$ rm .zsh*`
 - `$ vim ~/.bashrc` -> remove last line
 
-### Example
+### Example video (img = hyperlink)
 
 [![Zsh on Youtube Example](https://img.youtube.com/vi/I_jGAMR1Mi8/hqdefault.jpg)](https://www.youtube.com/watch?v=I_jGAMR1Mi8)
