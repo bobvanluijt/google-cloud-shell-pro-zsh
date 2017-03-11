@@ -94,11 +94,11 @@ main() {
     # If this platform provides a "chsh" command (not Cygwin), do it, man!
     if hash chsh >/dev/null 2>&1; then
       printf "${BLUE}Time to change your default shell to zsh!${NORMAL}\n"
-      echo 'if ! dpkg-query -l zsh > /dev/null; then'
-      echo '    sudo rm -r ~/.oh-my-zsh'
-      echo '    sudo rm .zsh*'
-      echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/bobvanluijt/google-cloud-shell-pro-zsh/master/install.sh)"'
-      echo 'fi'
+      echo 'if ! dpkg-query -l zsh > /dev/null; then' >> ~/.bashrc
+      echo '    sudo rm -r ~/.oh-my-zsh' >> ~/.bashrc
+      echo '    sudo rm .zsh*' >> ~/.bashrc
+      echo '    sh -c "$(curl -fsSL https://raw.githubusercontent.com/bobvanluijt/google-cloud-shell-pro-zsh/master/install.sh)"' >> ~/.bashrc
+      echo 'fi' >> ~/.bashrc
       echo '$(grep /zsh$ /etc/shells | tail -1)' >> ~/.bashrc
     # Else, suggest the user do so manually.
     else
